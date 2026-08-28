@@ -1,0 +1,25 @@
+{
+  "id": "cert_a0f33655ecd0",
+  "templateId": "tpl_m1vfgg_mtd1fzes",
+  "templateName": "Indroduction to Figma",
+  "recipient": {
+    "name": "Niranjini S",
+    "email": "niranjinisivaraj@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Niranjini S",
+    "recipient_email": "niranjinisivaraj@gmail.com",
+    "course": "Introduction to Figma",
+    "event_title": "Introduction to Figma",
+    "issue_date": "August 28, 2026",
+    "college": "GEC WAYANAD",
+    "department": "ECE(S7)",
+    "cert_id": "cert_a0f33655ecd0"
+  },
+  "issuedAt": "2026-08-28T15:22:08.894Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

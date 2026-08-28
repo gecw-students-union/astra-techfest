@@ -182,9 +182,21 @@
       certStage.style.width = dimensions.width + "px";
       certStage.style.height = dimensions.height + "px";
       if (template?.backgroundImage) {
+        const bgConfig = template.backgroundConfig || {};
+        const sizeVal = bgConfig.size === "custom" ? (bgConfig.scale || 100) + "%" : (bgConfig.size || "100% 100%");
+        let posX = "center";
+        let posY = "center";
+        if (bgConfig.position === "top") posY = "top";
+        else if (bgConfig.position === "bottom") posY = "bottom";
+        else if (bgConfig.position === "left") posX = "left";
+        else if (bgConfig.position === "right") posX = "right";
+        const xOff = bgConfig.xOffset || 0;
+        const yOff = bgConfig.yOffset || 0;
         certStage.style.backgroundImage = `url('${template.backgroundImage}')`;
-        certStage.style.backgroundSize = "cover";
-        certStage.style.backgroundPosition = "center";
+        certStage.style.backgroundSize = sizeVal;
+        certStage.style.backgroundPosition = (xOff !== 0 || yOff !== 0) ? `calc(${posX === 'left' ? '0%' : posX === 'right' ? '100%' : '50%'} + ${xOff}px) calc(${posY === 'top' ? '0%' : posY === 'bottom' ? '100%' : '50%'} + ${yOff}px)` : `${posX} ${posY}`;
+        certStage.style.backgroundRepeat = "no-repeat";
+        certStage.style.opacity = bgConfig.opacity !== undefined ? bgConfig.opacity : 1;
       } else {
         certStage.style.backgroundColor = "#0c1322";
       }

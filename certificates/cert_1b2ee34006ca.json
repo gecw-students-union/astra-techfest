@@ -1,0 +1,25 @@
+{
+  "id": "cert_1b2ee34006ca",
+  "templateId": "tpl_m1vfgg_mtd1fzes",
+  "templateName": "Indroduction to Figma",
+  "recipient": {
+    "name": "MISBA E",
+    "email": "misba_23b177cs@gecwyd.ac.in"
+  },
+  "data": {
+    "recipient_name": "MISBA E",
+    "recipient_email": "misba_23b177cs@gecwyd.ac.in",
+    "course": "Introduction to Figma",
+    "event_title": "Introduction to Figma",
+    "issue_date": "August 28, 2026",
+    "college": "Government engineering college wayanad",
+    "department": "Computer science and engineering",
+    "cert_id": "cert_1b2ee34006ca"
+  },
+  "issuedAt": "2026-08-28T15:34:44.631Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

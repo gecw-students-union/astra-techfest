@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Verifier - gecw-students-union/astra-techfest</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-sky-500/30">
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 font-bold">
+          🛡️
+        </div>
+        <div>
+          <h1 class="font-bold text-sm text-white">Certificate Verification Portal</h1>
+          <p class="text-xs text-slate-400 font-mono">gecw-students-union/astra-techfest</p>
+        </div>
+      </div>
+      <a href="https://github.com/gecw-students-union/astra-techfest" target="_blank" class="text-xs text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+        <span>View on GitHub</span> &rarr;
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-8 space-y-8">
+    <div class="max-w-xl mx-auto bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+      <h2 class="text-base font-bold text-white text-center">Verify Authentic Certificate</h2>
+      <p class="text-xs text-slate-400 text-center">Enter the Certificate ID to inspect cryptographic git proof.</p>
+      <form id="search-form" class="flex gap-2">
+        <input 
+          id="cert-input" 
+          type="text" 
+          placeholder="e.g. cert_9x48k2_..." 
+          class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-sky-500"
+          required
+        />
+        <button 
+          type="submit" 
+          class="bg-sky-500 hover:bg-sky-600 text-slate-950 font-bold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md shadow-sky-500/20 active:scale-95"
+        >
+          Verify
+        </button>
+      </form>
+    </div>
+
+    <div id="loading-state" class="hidden text-center py-12 space-y-3">
+      <div class="inline-block w-8 h-8 border-2 border-sky-500 border-t-transparent rounded-full animate-spin"></div>
+      <p class="text-xs text-slate-400">Querying cryptographic git commit tree on GitHub...</p>
+    </div>
+
+    <div id="error-state" class="hidden max-w-xl mx-auto bg-rose-500/10 border border-rose-500/30 rounded-2xl p-6 text-center space-y-2 text-rose-400">
+      <h3 class="font-bold text-sm">Certificate Verification Failed</h3>
+      <p id="error-message" class="text-xs text-rose-300"></p>
+    </div>
+
+    <div id="result-container" class="hidden space-y-8">
+      <div id="status-card" class="p-4 rounded-2xl border flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div id="status-icon" class="text-2xl"></div>
+          <div>
+            <h3 id="status-title" class="font-bold text-sm"></h3>
+            <p id="status-desc" class="text-xs opacity-80"></p>
+          </div>
+        </div>
+        <div id="action-buttons" class="flex items-center gap-2">
+          <button id="btn-download-png" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold px-3 py-1.5 rounded-lg text-white transition-all">
+            Download PNG
+          </button>
+          <button id="btn-download-pdf" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold px-3 py-1.5 rounded-lg text-white transition-all">
+            Download PDF
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-center overflow-auto p-4 bg-slate-950 border border-slate-800/80 rounded-2xl shadow-2xl">
+        <div id="cert-stage" class="relative rounded-xl border border-slate-700 shadow-2xl overflow-hidden bg-slate-900 select-none"></div>
+      </div>
+
+      <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Git Commit Audit Trail</h4>
+        <div id="commits-list" class="space-y-3"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
+    <p>Powered by GExam Cert & GitHub Git Immutability</p>
+  </footer>
+
+  <script>
+    const OWNER = "gecw-students-union";
+    const REPO = "astra-techfest";
+
+    const form = document.getElementById("search-form");
+    const input = document.getElementById("cert-input");
+    const loadingState = document.getElementById("loading-state");
+    const errorState = document.getElementById("error-state");
+    const errorMessage = document.getElementById("error-message");
+    const resultContainer = document.getElementById("result-container");
+    const certStage = document.getElementById("cert-stage");
+    const statusCard = document.getElementById("status-card");
+    const statusIcon = document.getElementById("status-icon");
+    const statusTitle = document.getElementById("status-title");
+    const statusDesc = document.getElementById("status-desc");
+    const commitsList = document.getElementById("commits-list");
+
+    let currentCert = null;
+    let currentTemplate = null;
+
+    async function verifyCertificate(certId) {
+      if (!certId) return;
+      loadingState.classList.remove("hidden");
+      errorState.classList.add("hidden");
+      resultContainer.classList.add("hidden");
+
+      try {
+        const certRes = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/certificates/${certId}.json`);
+        if (!certRes.ok) throw new Error(`Certificate ${certId} not found in repository ${OWNER}/${REPO}`);
+        const certJsonData = await certRes.json();
+        const cert = JSON.parse(decodeURIComponent(escape(atob(certJsonData.content.replace(/\n/g, '')))));
+        currentCert = cert;
+
+        let template = null;
+        if (cert.templateId) {
+          try {
+            const tmplRes = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/templates/${cert.templateId}.json`);
+            if (tmplRes.ok) {
+              const tmplJsonData = await tmplRes.json();
+              template = JSON.parse(decodeURIComponent(escape(atob(tmplJsonData.content.replace(/\n/g, '')))));
+            }
+          } catch (e) {}
+        }
+        currentTemplate = template;
+
+        const commitsRes = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/commits?path=certificates/${certId}.json`);
+        const commits = commitsRes.ok ? await commitsRes.json() : [];
+
+        renderResult(cert, template, commits);
+      } catch (err) {
+        errorMessage.innerText = err.message || "Failed to verify certificate";
+        errorState.classList.remove("hidden");
+      } finally {
+        loadingState.classList.add("hidden");
+      }
+    }
+
+    function renderResult(cert, template, commits) {
+      resultContainer.classList.remove("hidden");
+
+      const isGenesis = commits.length === 1;
+      const isTampered = commits.length > 1;
+
+      if (isGenesis) {
+        statusCard.className = "p-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 flex items-center justify-between gap-4";
+        statusIcon.innerText = "✅";
+        statusTitle.innerText = "Cryptographically Verified & Authentic";
+        statusDesc.innerText = `Genesis commit SHA: ${commits[0].sha.slice(0, 7)} by @${commits[0].author?.login || 'signer'}`;
+      } else if (isTampered) {
+        statusCard.className = "p-4 rounded-2xl border border-amber-500/30 bg-amber-500/10 text-amber-400 flex items-center justify-between gap-4";
+        statusIcon.innerText = "⚠️";
+        statusTitle.innerText = "Warning: Modified Post-Issuance";
+        statusDesc.innerText = `Certificate has ${commits.length} commits. Possible tampering detected.`;
+      } else {
+        statusCard.className = "p-4 rounded-2xl border border-slate-700 bg-slate-900 text-slate-300 flex items-center justify-between gap-4";
+        statusIcon.innerText = "📄";
+        statusTitle.innerText = "Certificate Record Loaded";
+        statusDesc.innerText = "Loaded record from GitHub.";
+      }
+
+      const dimensions = template?.dimensions || { width: 1000, height: 700 };
+      certStage.style.width = dimensions.width + "px";
+      certStage.style.height = dimensions.height + "px";
+      if (template?.backgroundImage) {
+        certStage.style.backgroundImage = `url('${template.backgroundImage}')`;
+        certStage.style.backgroundSize = "cover";
+        certStage.style.backgroundPosition = "center";
+      } else {
+        certStage.style.backgroundColor = "#0c1322";
+      }
+
+      certStage.innerHTML = "";
+      const elements = template?.elements || [];
+
+      elements.forEach((el) => {
+        const div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.left = el.x + "px";
+        div.style.top = el.y + "px";
+        div.style.transform = "translate(-50%, -50%)";
+        div.style.pointerEvents = "none";
+
+        if (el.type === "qr") {
+          const qrDiv = document.createElement("div");
+          qrDiv.className = "bg-white p-2 rounded-lg shadow-md flex items-center justify-center";
+          qrDiv.style.width = (el.width || 80) + "px";
+          qrDiv.style.height = (el.height || 80) + "px";
+          new QRCode(qrDiv, {
+            text: window.location.href,
+            width: (el.width || 80) - 16,
+            height: (el.height || 80) - 16,
+            correctLevel: QRCode.CorrectLevel.M
+          });
+          div.appendChild(qrDiv);
+        } else {
+          let text = el.text || "";
+          if (el.type === "placeholder" && el.placeholderKey) {
+            text = cert.data[el.placeholderKey] || (el.placeholderKey === "recipient_name" ? cert.recipient.name : "") || `[${el.placeholderKey}]`;
+          }
+          const span = document.createElement("span");
+          span.innerText = text;
+          span.style.fontSize = (el.fontSize || 18) + "px";
+          span.style.fontFamily = el.fontFamily || "inherit";
+          span.style.fontWeight = el.fontWeight || "normal";
+          span.style.color = el.color || "#f8fafc";
+          span.style.whiteSpace = "nowrap";
+          div.appendChild(span);
+        }
+        certStage.appendChild(div);
+      });
+
+      commitsList.innerHTML = "";
+      commits.forEach((c) => {
+        const row = document.createElement("div");
+        row.className = "p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between text-xs";
+        row.innerHTML = `
+          <div class="space-y-0.5">
+            <p class="font-mono text-slate-200 font-semibold">${c.commit.message}</p>
+            <p class="text-[11px] text-slate-400">${new Date(c.commit.author?.date).toLocaleString()} by @${c.author?.login || c.commit.author?.name}</p>
+          </div>
+          <a href="${c.html_url}" target="_blank" class="font-mono text-sky-400 hover:underline text-[11px]">${c.sha.slice(0, 7)} &rarr;</a>
+        `;
+        commitsList.appendChild(row);
+      });
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const val = input.value.trim();
+      if (val) {
+        history.replaceState(null, "", "?id=" + encodeURIComponent(val));
+        verifyCertificate(val);
+      }
+    });
+
+    document.getElementById("btn-download-png").addEventListener("click", async () => {
+      if (!certStage) return;
+      const canvas = await html2canvas(certStage, { scale: 2 });
+      const a = document.createElement("a");
+      a.href = canvas.toDataURL("image/png");
+      a.download = `certificate-${currentCert?.id || 'export'}.png`;
+      a.click();
+    });
+
+    document.getElementById("btn-download-pdf").addEventListener("click", async () => {
+      if (!certStage) return;
+      const canvas = await html2canvas(certStage, { scale: 2 });
+      const imgData = canvas.toDataURL("image/png");
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({
+        orientation: canvas.width > canvas.height ? "landscape" : "portrait",
+        unit: "px",
+        format: [canvas.width, canvas.height]
+      });
+      pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
+      pdf.save(`certificate-${currentCert?.id || 'export'}.pdf`);
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const initialId = params.get("id");
+    if (initialId) {
+      input.value = initialId;
+      verifyCertificate(initialId);
+    }
+  </script>
+</body>
+</html>

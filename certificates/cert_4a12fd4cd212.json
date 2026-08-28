@@ -1,0 +1,25 @@
+{
+  "id": "cert_4a12fd4cd212",
+  "templateId": "tpl_m1vfgg_mtd1fzes",
+  "templateName": "Indroduction to Figma",
+  "recipient": {
+    "name": "Rebekka",
+    "email": "mathewrebekka4647@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Rebekka",
+    "recipient_email": "mathewrebekka4647@gmail.com",
+    "course": "Introduction to Figma",
+    "event_title": "Introduction to Figma",
+    "issue_date": "August 28, 2026",
+    "college": "GEC WAYANAD",
+    "department": "ELECTRONICS AND COMMUNICATION ENGINEERING",
+    "cert_id": "cert_4a12fd4cd212"
+  },
+  "issuedAt": "2026-08-28T15:23:19.347Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

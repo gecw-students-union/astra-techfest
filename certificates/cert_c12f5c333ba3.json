@@ -1,0 +1,25 @@
+{
+  "id": "cert_c12f5c333ba3",
+  "templateId": "tpl_m1vfgg_mtd1fzes",
+  "templateName": "Indroduction to Figma",
+  "recipient": {
+    "name": "NASLA K P",
+    "email": "nasla_25b239ee@gecwyd.ac.in"
+  },
+  "data": {
+    "recipient_name": "NASLA K P",
+    "recipient_email": "nasla_25b239ee@gecwyd.ac.in",
+    "course": "Introduction to Figma",
+    "event_title": "Introduction to Figma",
+    "issue_date": "August 28, 2026",
+    "college": "GEC WAYANAD",
+    "department": "Electrical and electronics engineering/s3",
+    "cert_id": "cert_c12f5c333ba3"
+  },
+  "issuedAt": "2026-08-28T15:21:27.276Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

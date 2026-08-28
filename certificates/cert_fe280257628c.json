@@ -1,0 +1,25 @@
+{
+  "id": "cert_fe280257628c",
+  "templateId": "tpl_m1vfgg_mtd1fzes",
+  "templateName": "Indroduction to Figma",
+  "recipient": {
+    "name": "Adhil Muhammed K",
+    "email": "adhil.mhdk28@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Adhil Muhammed K",
+    "recipient_email": "adhil.mhdk28@gmail.com",
+    "course": "Introduction to Figma",
+    "event_title": "Introduction to Figma",
+    "issue_date": "August 28, 2026",
+    "college": "Individual",
+    "department": "General",
+    "cert_id": "cert_fe280257628c"
+  },
+  "issuedAt": "2026-08-28T15:13:23.112Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

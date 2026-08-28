@@ -1,0 +1,25 @@
+{
+  "id": "cert_f88591dda1b4",
+  "templateId": "tpl_m1vfgg_mtd1fzes",
+  "templateName": "Indroduction to Figma",
+  "recipient": {
+    "name": "MUHAMMED SINAN E",
+    "email": "muhammedsinan_25b494ec@gecwyd.ac.in"
+  },
+  "data": {
+    "recipient_name": "MUHAMMED SINAN E",
+    "recipient_email": "muhammedsinan_25b494ec@gecwyd.ac.in",
+    "course": "Introduction to Figma",
+    "event_title": "Introduction to Figma",
+    "issue_date": "August 28, 2026",
+    "college": "Gec wayanad",
+    "department": "Ece",
+    "cert_id": "cert_f88591dda1b4"
+  },
+  "issuedAt": "2026-08-28T15:21:07.222Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

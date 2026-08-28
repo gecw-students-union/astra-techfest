@@ -1,0 +1,25 @@
+{
+  "id": "cert_334708faa59b",
+  "templateId": "tpl_m1vfgg_mtd1fzes",
+  "templateName": "Indroduction to Figma",
+  "recipient": {
+    "name": "Nivedya A",
+    "email": "nivedyaa20@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Nivedya A",
+    "recipient_email": "nivedyaa20@gmail.com",
+    "course": "Introduction to Figma",
+    "event_title": "Introduction to Figma",
+    "issue_date": "August 28, 2026",
+    "college": "",
+    "department": "",
+    "cert_id": "cert_334708faa59b"
+  },
+  "issuedAt": "2026-08-28T15:22:18.305Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

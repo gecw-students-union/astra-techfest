@@ -1,0 +1,25 @@
+{
+  "id": "cert_a1d8d4a40db8",
+  "templateId": "tpl_m1vfgg_mtd1fzes",
+  "templateName": "Indroduction to Figma",
+  "recipient": {
+    "name": "Muhammed Shibili MP",
+    "email": "muhammedshibilmp1401@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Muhammed Shibili MP",
+    "recipient_email": "muhammedshibilmp1401@gmail.com",
+    "course": "Introduction to Figma",
+    "event_title": "Introduction to Figma",
+    "issue_date": "August 28, 2026",
+    "college": "GEC Wayanad",
+    "department": "ECE",
+    "cert_id": "cert_a1d8d4a40db8"
+  },
+  "issuedAt": "2026-08-28T15:57:05.584Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

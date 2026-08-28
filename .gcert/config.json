@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "name": "astra-techfest",
+  "description": "Certificate repository initialized by GECW Cert Portal",
+  "createdAt": "2026-08-28T13:04:16.438Z",
+  "settings": {
+    "allowPublicVerification": true
+  }
+}

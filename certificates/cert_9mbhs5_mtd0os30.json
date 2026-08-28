@@ -1,0 +1,23 @@
+{
+  "id": "cert_9mbhs5_mtd0os30",
+  "templateId": "tpl_fj3tmz_mtd0o83v",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "Test"
+  },
+  "data": {
+    "recipient_name": "Test",
+    "issue_date": "August 28, 2026",
+    "cert_id": "cert_9mbhs5_mtd0os30"
+  },
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": null,
+    "avatar_url": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  },
+  "issuedAt": "2026-08-28T13:58:34.284Z",
+  "repository": {
+    "owner": "gecw-students-union",
+    "name": "astra-techfest"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "cert_fbef9c2a51dc",
+  "templateId": "tpl_m1vfgg_mtd1fzes",
+  "templateName": "Indroduction to Figma",
+  "recipient": {
+    "name": "MOHAMMAD MUNEEB PT",
+    "email": "mohammedmuneebptcsa@gmail.com"
+  },
+  "data": {
+    "recipient_name": "MOHAMMAD MUNEEB PT",
+    "recipient_email": "mohammedmuneebptcsa@gmail.com",
+    "course": "Introduction to Figma",
+    "event_title": "Introduction to Figma",
+    "issue_date": "August 28, 2026",
+    "college": "KMEA ENGINEERING COLLEGE (AUTONOMOUS),  ERNAKULAM",
+    "department": "COMPUTER SCIENCE AND ENGINEERING (S3)",
+    "cert_id": "cert_fbef9c2a51dc"
+  },
+  "issuedAt": "2026-08-28T15:20:58.520Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "cert_f41cc6c22008",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "Indhu Vinod",
+    "email": "indhu_25b162cs@gecwyd.ac.in"
+  },
+  "data": {
+    "recipient_name": "Indhu Vinod",
+    "recipient_email": "indhu_25b162cs@gecwyd.ac.in",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "",
+    "department": "",
+    "cert_id": "cert_f41cc6c22008"
+  },
+  "issuedAt": "2026-08-29T14:53:41.835Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

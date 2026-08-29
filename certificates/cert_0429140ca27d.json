@@ -1,0 +1,25 @@
+{
+  "id": "cert_0429140ca27d",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "RIYA SHIJU",
+    "email": "riyashiju2005@gmail.com"
+  },
+  "data": {
+    "recipient_name": "RIYA SHIJU",
+    "recipient_email": "riyashiju2005@gmail.com",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "GEC Wayanad",
+    "department": "Computer Science",
+    "cert_id": "cert_0429140ca27d"
+  },
+  "issuedAt": "2026-08-29T14:51:38.281Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

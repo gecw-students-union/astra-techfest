@@ -1,0 +1,25 @@
+{
+  "id": "cert_cf720571ae92",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "SHIFA SULTHANA O",
+    "email": "shifa_23b183cs@gecwyd.ac.in"
+  },
+  "data": {
+    "recipient_name": "SHIFA SULTHANA O",
+    "recipient_email": "shifa_23b183cs@gecwyd.ac.in",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "GEC Wayanad",
+    "department": "CSE",
+    "cert_id": "cert_cf720571ae92"
+  },
+  "issuedAt": "2026-08-29T14:52:28.895Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

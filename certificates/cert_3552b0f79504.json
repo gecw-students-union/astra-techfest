@@ -1,0 +1,25 @@
+{
+  "id": "cert_3552b0f79504",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "Muhammed Shibili MP",
+    "email": "muhammedshibilmp1401@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Muhammed Shibili MP",
+    "recipient_email": "muhammedshibilmp1401@gmail.com",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "GEC Wayanad",
+    "department": "ECE",
+    "cert_id": "cert_3552b0f79504"
+  },
+  "issuedAt": "2026-08-29T14:55:58.477Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

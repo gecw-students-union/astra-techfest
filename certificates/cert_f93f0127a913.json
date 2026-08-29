@@ -1,0 +1,25 @@
+{
+  "id": "cert_f93f0127a913",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "Fathimma Minha",
+    "email": "fathimmaminha665@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Fathimma Minha",
+    "recipient_email": "fathimmaminha665@gmail.com",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "Gec wayanad",
+    "department": "ECE",
+    "cert_id": "cert_f93f0127a913"
+  },
+  "issuedAt": "2026-08-29T14:51:24.635Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

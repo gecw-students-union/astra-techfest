@@ -1,0 +1,25 @@
+{
+  "id": "cert_6093c604da38",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "Devajith P",
+    "email": "devajithp2005@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Devajith P",
+    "recipient_email": "devajithp2005@gmail.com",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "GEC Wayanad",
+    "department": "CSE",
+    "cert_id": "cert_6093c604da38"
+  },
+  "issuedAt": "2026-08-29T14:53:40.643Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

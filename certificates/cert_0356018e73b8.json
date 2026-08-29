@@ -1,0 +1,25 @@
+{
+  "id": "cert_0356018e73b8",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "MUHAMMED MASHHOOD K",
+    "email": "muhammedmashood_25b519ec@gecwyd.ac.in"
+  },
+  "data": {
+    "recipient_name": "MUHAMMED MASHHOOD K",
+    "recipient_email": "muhammedmashood_25b519ec@gecwyd.ac.in",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "GEC Wayanad",
+    "department": "ECE",
+    "cert_id": "cert_0356018e73b8"
+  },
+  "issuedAt": "2026-08-29T14:55:17.725Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "cert_dbb48d5e90a6",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "Rifna Fathima",
+    "email": "rifnafathima313@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Rifna Fathima",
+    "recipient_email": "rifnafathima313@gmail.com",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "",
+    "department": "",
+    "cert_id": "cert_dbb48d5e90a6"
+  },
+  "issuedAt": "2026-08-29T14:54:26.555Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

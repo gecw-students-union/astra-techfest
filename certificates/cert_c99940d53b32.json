@@ -1,0 +1,25 @@
+{
+  "id": "cert_c99940d53b32",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "Mayugha.N",
+    "email": "mayugha2007@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Mayugha.N",
+    "recipient_email": "mayugha2007@gmail.com",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "Gec wayanad",
+    "department": "Electronic and communication s1",
+    "cert_id": "cert_c99940d53b32"
+  },
+  "issuedAt": "2026-08-29T14:52:10.174Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "cert_00a093963efe",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "MIJNA M",
+    "email": "mijnaraj@gmail.com"
+  },
+  "data": {
+    "recipient_name": "MIJNA M",
+    "recipient_email": "mijnaraj@gmail.com",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "GEC WAYANAD",
+    "department": "ECE(S3)",
+    "cert_id": "cert_00a093963efe"
+  },
+  "issuedAt": "2026-08-29T14:51:26.547Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

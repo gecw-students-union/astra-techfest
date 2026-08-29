@@ -1,0 +1,25 @@
+{
+  "id": "cert_0ec359bcb156",
+  "templateId": "tpl_veb0ly_mteg5os4",
+  "templateName": "Certificate of Excellence",
+  "recipient": {
+    "name": "Noona Nasrin TK",
+    "email": "noonanasrintk0@gmail.com"
+  },
+  "data": {
+    "recipient_name": "Noona Nasrin TK",
+    "recipient_email": "noonanasrintk0@gmail.com",
+    "course": "Introduction to Git and GitHub",
+    "event_title": "Introduction to Git and GitHub",
+    "issue_date": "August 29, 2026",
+    "college": "GEC WAYANAD",
+    "department": "Computer science",
+    "cert_id": "cert_0ec359bcb156"
+  },
+  "issuedAt": "2026-08-29T14:51:35.589Z",
+  "issuedBy": {
+    "login": "gecw-students-union",
+    "name": "gecw-students-union",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/286740115?v=4"
+  }
+}

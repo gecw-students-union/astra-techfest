@@ -202,7 +202,16 @@
       }
 
       certStage.innerHTML = "";
-      const elements = template?.elements || [];
+      if (template?.isHtml) {
+        let html = template.htmlContent || "";
+        const dataMap = { ...cert.data, recipient_name: cert.recipient?.name || "" };
+        Object.entries(dataMap).forEach(([key, value]) => {
+          const regex = new RegExp(`\\{\\{${key}\\\}\\}`, "g");
+          html = html.replace(regex, value);
+        });
+        certStage.innerHTML = html;
+      } else {
+        const elements = template?.elements || [];
 
       elements.forEach((el) => {
         const div = document.createElement("div");
@@ -240,6 +249,7 @@
         }
         certStage.appendChild(div);
       });
+      }
 
       commitsList.innerHTML = "";
       commits.forEach((c) => {
